@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-10-21T09:22:29",
+  "checks": [
+    {
+      "check": "patient_count_100000",
+      "ok": true,
+      "detail": 100000
+    },
+    {
+      "check": "seven_table_total",
+      "ok": true,
+      "detail": 2065156
+    },
+    {
+      "check": "health_score_rows",
+      "ok": true,
+      "detail": 100000
+    },
+    {
+      "check": "trend_year_rows",
+      "ok": true,
+      "detail": 12
+    },
+    {
+      "check": "spark_run",
+      "ok": true,
+      "detail": 124.74
+    },
+    {
+      "check": "spark_prediction_r2",
+      "ok": true,
+      "detail": 0.7361
+    },
+    {
+      "check": "api_14_passed",
+      "ok": true,
+      "detail": 14
+    },
+    {
+      "check": "quality_pass",
+      "ok": true,
+      "detail": "PASS"
+    },
+    {
+      "check": "hdfs_pass",
+      "ok": true,
+      "detail": "aaec11fc8b502819e91bc03e5f45117ba0e71e1b198675f6bff25ebe68381406"
+    },
+    {
+      "check": "hive_ods_pass",
+      "ok": true,
+      "detail": {
+        "ods_patient_info": 100000,
+        "ods_disease_record": 165087,
+        "ods_health_checkup": 300022,
+        "ods_lifestyle": 100000,
+        "ods_visit_record": 550070,
+        "ods_medication_record": 549587,
+        "ods_follow_up": 300390
+      }
+    },
+    {
+      "check": "hive_ads_pass",
+      "ok": true,
+      "detail": 100000
+    },
+    {
+      "check": "spark_hdfs_source",
+      "ok": true,
+      "detail": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods"
+    },
+    {
+      "check": "sqoop_verified",
+      "ok": true,
+      "detail": "Sqoop 独立导入能力验证：patient_info 前 1000 行 staging；未执行七表全量导入"
+    },
+    {
+      "check": "frontend_dist",
+      "ok": true,
+      "detail": "frontend/dist/index.html"
+    },
+    {
+      "check": "screenshots_11",
+      "ok": true,
+      "detail": 11
+    },
+    {
+      "check": "matplotlib_8",
+      "ok": true,
+      "detail": 8
+    },
+    {
+      "check": "pptx_exists",
+      "ok": true,
+      "detail": "pptx"
+    },
+    {
+      "check": "no_env_local_in_git",
+      "ok": true,
+      "detail": "由打包脚本排除 backend/.env.local"
+    }
+  ],
+  "passed": 18,
+  "failed": 0,
+  "status": "PASS",
+  "known_gap": "Sqoop 仅 1000 行 staging，七表全量导入未执行"
+}

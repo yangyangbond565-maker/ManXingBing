@@ -1,0 +1,2 @@
+<template><div class="page"><div class="panel notfound"><div class="code">404</div><h2>页面不存在</h2><p class="muted">你访问的页面可能已移动，返回系统首页继续浏览。</p><el-button type="primary" @click="$router.push('/home')">返回首页</el-button></div></div></template>
+<style scoped>.notfound{min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.code{font-size:72px;font-weight:900;color:#dbe7f5;letter-spacing:4px}</style>

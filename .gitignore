@@ -1,0 +1,55 @@
+# ===== 本地环境 / 工具（体积大，不入库/不入包） =====
+.tools/
+.npm-cache/
+.tmp/
+.hadoop/
+.spark-warehouse/
+metastore_db/
+derby.log
+node_modules/
+frontend/dist/
+backend/target/
+*.class
+*.jar
+
+# ===== 数据（可重新生成，避免压缩包过大） =====
+data/generated/*.csv
+data/generated/*.json
+data/warehouse/
+data/sync/
+data/test_smoke/
+data/test_generated/
+data/ads/
+*.tsv
+*.parquet
+
+# 保留 manifest 以证明数据规模
+!data/generated/manifest.json
+
+# ===== 日志 =====
+logs/*.log
+logs/*.out
+logs/*.err
+*.log
+
+# ===== 密码 / 环境 =====
+backend/.env.local
+.env
+.env.local
+*.pem
+*.key
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+*.iml
+Thumbs.db
+Desktop.ini
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vite/
+
+# ===== 临时预览 =====
+.dsh-office-*/
+backup/

@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-10-21T09:21:00+08:00",
+  "purpose": "Spark ods_dir 日志字段修复前后对比",
+  "spark_code_change": "chronic_disease_analysis.py 第 492 行 str(ODS_DIR) -> ODS_SPEC；仅影响运行元数据",
+  "before": {
+    "spark_report_ods_dir": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods（人工修正，非脚本生成）",
+    "spark_log_ods_dir": "None",
+    "elapsed_seconds": 83.67,
+    "hdfs_ads": {
+      "patient_profile": 34,
+      "disease_dist": 11,
+      "severity": 31,
+      "comorbidity": 4,
+      "risk_factor": 71,
+      "visit_analysis": 19,
+      "medication_analysis": 109,
+      "drug_by_disease": 31,
+      "trend": 189,
+      "health_score": 100001,
+      "health_level": 6,
+      "overview": 2
+    },
+    "mysql_ads": {
+      "ads_overview": 1,
+      "ads_patient_profile": 33,
+      "ads_disease_dist": 10,
+      "ads_severity": 30,
+      "ads_comorbidity": 3,
+      "ads_risk_factor": 70,
+      "ads_visit_analysis": 18,
+      "ads_medication_analysis": 108,
+      "ads_drug_by_disease": 30,
+      "ads_trend": 188,
+      "ads_health_score": 100000,
+      "ads_health_level": 5,
+      "ads_data_quality": 7,
+      "ads_module_run": 8,
+      "ads_module_kpi": 7
+    }
+  },
+  "after": {
+    "spark_report_ods_dir": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods",
+    "spark_log_ods_dir": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods",
+    "elapsed_seconds": 124.74,
+    "hdfs_ads": {
+      "patient_profile": 34,
+      "disease_dist": 11,
+      "severity": 31,
+      "comorbidity": 4,
+      "risk_factor": 71,
+      "visit_analysis": 19,
+      "medication_analysis": 109,
+      "drug_by_disease": 31,
+      "trend": 189,
+      "health_score": 100001,
+      "health_level": 6,
+      "overview": 2
+    },
+    "mysql_ads": {
+      "ads_overview": 1,
+      "ads_patient_profile": 33,
+      "ads_disease_dist": 10,
+      "ads_severity": 30,
+      "ads_comorbidity": 3,
+      "ads_risk_factor": 70,
+      "ads_visit_analysis": 18,
+      "ads_medication_analysis": 108,
+      "ads_drug_by_disease": 30,
+      "ads_trend": 188,
+      "ads_health_score": 100000,
+      "ads_health_level": 5,
+      "ads_data_quality": 7,
+      "ads_module_run": 8,
+      "ads_module_kpi": 7
+    },
+    "prediction": {
+      "slope": 3902.6548,
+      "intercept": -7868580.7262,
+      "r2": 0.7361
+    },
+    "health_score": {
+      "patients": 100000,
+      "avg_score": 72.8,
+      "high_risk": 1718,
+      "high_risk_rate": 1.72
+    }
+  },
+  "comparison": {
+    "hdfs_ads_counts_identical": true,
+    "mysql_ads_counts_identical": true,
+    "prediction_identical": true,
+    "health_score_identical": true,
+    "elapsed_changed": true,
+    "note": "耗时由 83.67 变为 124.74 秒，属于本次复跑的运行时间差异；数据、模型参数、算法和输入未改变。"
+  }
+}

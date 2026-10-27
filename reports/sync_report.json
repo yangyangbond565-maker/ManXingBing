@@ -1,0 +1,25 @@
+{
+  "synced_at": "2026-10-20T20:07:16",
+  "mode": "webhdfs",
+  "elapsed_seconds": 34.86,
+  "rows": {
+    "patient_info": 100000,
+    "disease_record": 165087,
+    "health_checkup": 300022,
+    "lifestyle": 100000,
+    "visit_record": 550070,
+    "medication_record": 549587,
+    "follow_up": 300390
+  },
+  "locations": {
+    "patient_info": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/patient_info/data.tsv",
+    "disease_record": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/disease_record/data.tsv",
+    "health_checkup": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/health_checkup/data.tsv",
+    "lifestyle": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/lifestyle/data.tsv",
+    "visit_record": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/visit_record/data.tsv",
+    "medication_record": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/medication_record/data.tsv",
+    "follow_up": "http://192.168.20.135:9870/webhdfs/v1/warehouse/chronic_disease/ods/follow_up/data.tsv"
+  },
+  "local_ddl": "D:\\官方工作区\\chronic-disease\\data\\warehouse\\ods\\ods_local.sql",
+  "note": "local 模式落盘到项目 data/warehouse，供 Spark/Hive 本地外部表读取；hdfs/webhdfs 模式落盘到 HDFS。"
+}

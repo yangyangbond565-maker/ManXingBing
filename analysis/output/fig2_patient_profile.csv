@@ -1,0 +1,8 @@
+﻿dimension_value,patient_count,group
+女,49643,gender
+男,50357,gender
+青年(<30),717,age
+中青年(30-44),8968,age
+中年(45-59),34181,age
+中老年(60-74),40354,age
+老年(75+),15780,age

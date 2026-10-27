@@ -1,0 +1,92 @@
+{
+  "verified_at": "2026-10-20T21:21:30+08:00",
+  "status": "PASS",
+  "scope": "Sqoop 独立导入能力验证：patient_info 前 1000 行 staging；未执行七表全量导入",
+  "sqoop": {
+    "version": "1.4.7",
+    "install_path": "/opt/sqoop-1.4.7",
+    "package": "sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz",
+    "md5": "390122c6714fb5a09ec45aff4cbb0052",
+    "java": "1.8.0_371",
+    "hadoop_client": "3.3.6",
+    "connector": "mysql-connector-j-8.0.33.jar",
+    "dependency_note": "Sqoop 1.4.7 自带依赖缺少 commons-lang 2.6，已从 /opt/hive/lib 复制到 Sqoop lib；未替换 Hadoop/Hive 核心依赖"
+  },
+  "jdbc": {
+    "status": "PASS",
+    "driver": "mysql-connector-j-8.0.33",
+    "database": "MySQL 8.0.42",
+    "user": "sqoop_verify",
+    "grants": "SELECT ON chronic_disease.*",
+    "patient_count": 100000,
+    "le1000_count": 1000,
+    "sample": "1|女|61|湖北|荆州"
+  },
+  "sqoop_connection": {
+    "status": "PASS",
+    "command": "sqoop list-databases",
+    "databases": [
+      "information_schema",
+      "performance_schema",
+      "chronic_disease"
+    ],
+    "password_handling": "file:///root/.sqoop_mysql_pass，root-only 0600；未写入源码或项目"
+  },
+  "import": {
+    "status": "PASS",
+    "table": "patient_info",
+    "where": "patient_id <= 1000",
+    "target": "/warehouse/chronic_disease/sqoop_staging/patient_info_1000",
+    "mysql_count": 1000,
+    "hdfs_count": 1000,
+    "hive_count": 1000,
+    "hdfs_bytes": 78592,
+    "hdfs_sha256": "cadbe42385662b847f12337f5791fd2031bef2b7e605bb71df39a95d6a387852",
+    "yarn_application": "application_1792497795828_0029",
+    "map_input_records": 1000,
+    "map_output_records": 1000,
+    "hive_table": "chronic_disease_db.ods_sqoop_patient_info_1000",
+    "hive_table_type": "EXTERNAL_TABLE",
+    "hive_location": "hdfs://hadoop:9000/warehouse/chronic_disease/sqoop_staging/patient_info_1000",
+    "columns": [
+      "patient_id int",
+      "gender string",
+      "age int",
+      "province string",
+      "city string",
+      "id_number string",
+      "phone string",
+      "create_time string"
+    ],
+    "sample_rows": [
+      "1|女|61|湖北|荆州|310119650803000011|13900000001|2018-05-08 23:41:35.0",
+      "2|男|77|江苏|无锡|440119490223000022|15000000002|2021-09-20 12:59:20.0",
+      "3|女|39|四川|绵阳|330119870521000033|15100000003|2019-07-15 07:22:08.0"
+    ],
+    "mysql_aggregate": {
+      "n": 1000,
+      "sum_patient_id": 500500,
+      "sum_age": 61527,
+      "distinct_patient_id": 1000
+    },
+    "hive_aggregate": {
+      "n": 1000,
+      "sum_patient_id": 500500,
+      "sum_age": 61527,
+      "distinct_patient_id": 1000
+    }
+  },
+  "not_executed": [
+    "七张业务表的 Sqoop 全量导入",
+    "Sqoop --hive-import / --hive-overwrite",
+    "对现有 ODS/ADS 外部表的覆盖",
+    "全局 /etc/profile 修改或 Hadoop/Hive 服务重启"
+  ],
+  "evidence": [
+    "logs/sqoop_install.log",
+    "logs/sqoop_jdbc.log",
+    "logs/sqoop_eval.log",
+    "logs/sqoop_import.log",
+    "logs/sqoop_content_check.log"
+  ]
+}

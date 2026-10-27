@@ -1,0 +1,134 @@
+{
+  "verified_at": "2026-10-20T20:20:00+08:00",
+  "vm": {
+    "name": "Hadoop-CentOS7",
+    "hostname": "hadoop",
+    "ip": "192.168.20.135",
+    "os": "CentOS 7",
+    "java": "1.8.0_371",
+    "ssh": "key-based root login via D:/BigDataLab/ssh/hadoop_vm_rsa",
+    "hdfs_capacity_gb": 47.76,
+    "hdfs_remaining_gb": 42.31
+  },
+  "hdfs": {
+    "status": "PASS",
+    "test_path": "/warehouse/chronic_disease/ods/_verification/hdfs_test.txt",
+    "test_bytes": 106,
+    "sha256_local": "aaec11fc8b502819e91bc03e5f45117ba0e71e1b198675f6bff25ebe68381406",
+    "sha256_hdfs": "aaec11fc8b502819e91bc03e5f45117ba0e71e1b198675f6bff25ebe68381406",
+    "namenode": "hdfs://hadoop:9000",
+    "live_datanodes": 1,
+    "ods_files": {
+      "patient_info": {
+        "rows": 100000,
+        "bytes": 7859572
+      },
+      "disease_record": {
+        "rows": 165087,
+        "bytes": 13596235
+      },
+      "health_checkup": {
+        "rows": 300022,
+        "bytes": 25014073
+      },
+      "lifestyle": {
+        "rows": 100000,
+        "bytes": 4587802
+      },
+      "visit_record": {
+        "rows": 550070,
+        "bytes": 56411936
+      },
+      "medication_record": {
+        "rows": 549587,
+        "bytes": 51323738
+      },
+      "follow_up": {
+        "rows": 300390,
+        "bytes": 28141551
+      }
+    },
+    "total_rows": 2065156
+  },
+  "hive": {
+    "status": "PASS",
+    "version": "3.1.3",
+    "metastore_port": 9083,
+    "hiveserver2_port": 10000,
+    "database": "chronic_disease_db",
+    "ods_tables": 7,
+    "ads_tables": 12,
+    "ods_counts": {
+      "ods_patient_info": 100000,
+      "ods_disease_record": 165087,
+      "ods_health_checkup": 300022,
+      "ods_lifestyle": 100000,
+      "ods_visit_record": 550070,
+      "ods_medication_record": 549587,
+      "ods_follow_up": 300390
+    },
+    "ads_counts": {
+      "ads_overview": 1,
+      "ads_patient_profile": 33,
+      "ads_disease_dist": 10,
+      "ads_severity": 30,
+      "ads_comorbidity": 3,
+      "ads_risk_factor": 70,
+      "ads_visit_analysis": 18,
+      "ads_medication_analysis": 108,
+      "ads_drug_by_disease": 30,
+      "ads_trend": 188,
+      "ads_health_score": 100000,
+      "ads_health_level": 5
+    },
+    "key_values": {
+      "avg_health_score": 72.8,
+      "high_risk_count": 1718,
+      "high_risk_rate": 1.72,
+      "r2": 0.7361,
+      "forecast_2026": 38197.8,
+      "forecast_2029": 49905.8
+    }
+  },
+  "spark": {
+    "status": "PASS",
+    "source": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods/*/data.tsv",
+    "mode": "local[4] on Windows, Hadoop client 3.3.6",
+    "elapsed_seconds": 124.74,
+    "modules": 8,
+    "mysql_ads": 15,
+    "hdfs_ads_dirs": 12,
+    "hdfs_ads_root": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ads",
+    "outputs": {
+      "patient_profile": 34,
+      "disease_dist": 11,
+      "severity": 31,
+      "comorbidity": 4,
+      "risk_factor": 71,
+      "visit_analysis": 19,
+      "medication_analysis": 109,
+      "drug_by_disease": 31,
+      "trend": 189,
+      "health_score": 100001,
+      "health_level": 6,
+      "overview": 2
+    },
+    "note": "outputs include one CSV header line"
+  },
+  "sqoop": {
+    "status": "PASS",
+    "scope": "patient_info 1000-row staging; full seven-table import not executed",
+    "version": "1.4.7",
+    "connector": "mysql-connector-j-8.0.33.jar",
+    "mysql_rows": 1000,
+    "hdfs_rows": 1000,
+    "hive_rows": 1000,
+    "verified_at": "2026-10-20T21:21:30+08:00",
+    "evidence": "reports/sqoop_verification.json"
+  },
+  "backend_api": {
+    "status": "PASS",
+    "endpoints": 14,
+    "passed": 14
+  }
+}

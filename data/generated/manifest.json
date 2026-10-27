@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-10-20T18:46:56",
+  "seed": 20261020,
+  "patient_count": 100000,
+  "elapsed_seconds": 36.86,
+  "tables": {
+    "patient_info": {
+      "rows": 100000,
+      "bytes": 7859637,
+      "sha256": "02acb6aaf58be09d594f86dc2ebf99c94e2c1605974da1dabfb185abe4083f63",
+      "columns": [
+        "patient_id",
+        "gender",
+        "age",
+        "province",
+        "city",
+        "id_number",
+        "phone",
+        "create_time"
+      ]
+    },
+    "disease_record": {
+      "rows": 165087,
+      "bytes": 12551810,
+      "sha256": "1275b3923484e53b21a65dc45f313523545247cf577e6ed01d292d9385bc833d",
+      "columns": [
+        "patient_id",
+        "disease_type",
+        "disease_name",
+        "diagnose_date",
+        "severity",
+        "doctor_id",
+        "hospital"
+      ]
+    },
+    "health_checkup": {
+      "rows": 300022,
+      "bytes": 22748139,
+      "sha256": "770c7dc7d2ffd496fd60d6a34c7ca2d8a5344cb39902089bb8908b9d2469ba5c",
+      "columns": [
+        "patient_id",
+        "checkup_date",
+        "sbp",
+        "dbp",
+        "fasting_glucose",
+        "hba1c",
+        "tc",
+        "tg",
+        "hdl",
+        "ldl",
+        "bmi",
+        "heart_rate",
+        "creatinine",
+        "uric_acid"
+      ]
+    },
+    "lifestyle": {
+      "rows": 100000,
+      "bytes": 3999003,
+      "sha256": "c1def33321a4346ae5ab64d447210bb71e3b27d74f2569646e1c84ad2f02b6f6",
+      "columns": [
+        "patient_id",
+        "smoking_status",
+        "smoking_amount",
+        "drinking_status",
+        "exercise_freq",
+        "sleep_hours",
+        "diet_pattern"
+      ]
+    },
+    "visit_record": {
+      "rows": 550070,
+      "bytes": 52506995,
+      "sha256": "1cf1d08422ff9ebc5a24a8a3f7512eb813b8107b8d3ed3d9a8a0dd20260ee569",
+      "columns": [
+        "patient_id",
+        "visit_date",
+        "visit_type",
+        "hospital",
+        "department",
+        "diagnosis",
+        "cost",
+        "insurance_pay",
+        "self_pay",
+        "stay_days"
+      ]
+    },
+    "medication_record": {
+      "rows": 549587,
+      "bytes": 48448520,
+      "sha256": "da48d920ad2c033e175fde14adadc6fc3b4d515129df38ee7d895245e020c91a",
+      "columns": [
+        "patient_id",
+        "drug_name",
+        "drug_type",
+        "dosage",
+        "start_date",
+        "end_date",
+        "cost",
+        "is_effective"
+      ]
+    },
+    "follow_up": {
+      "rows": 300390,
+      "bytes": 26150028,
+      "sha256": "af817bebac44284f95e1b3ffcd5a3f3c3011e3725aa28cc37beff5a0fe45040e",
+      "columns": [
+        "patient_id",
+        "follow_date",
+        "follow_type",
+        "symptom_status",
+        "medication_adherence",
+        "doctor_advice",
+        "next_follow_date"
+      ]
+    }
+  },
+  "note": "10万统计口径为 patient_info 患者人数；其余表按一对多关系生成。"
+}

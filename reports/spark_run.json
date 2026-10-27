@@ -1,0 +1,63 @@
+{
+  "run_at": "2026-10-21T09:20:23",
+  "elapsed_seconds": 124.74,
+  "clean_report": {
+    "patient_info": {
+      "before": 100000,
+      "after": 100000
+    },
+    "health_checkup": {
+      "before": 300022,
+      "after": 300022
+    },
+    "disease_record": {
+      "before": 165087,
+      "after": 165087
+    },
+    "visit_record": {
+      "before": 550070,
+      "after": 550070
+    },
+    "medication_record": {
+      "before": 549587,
+      "after": 549587
+    },
+    "follow_up": {
+      "before": 300390,
+      "after": 300390
+    }
+  },
+  "prediction": {
+    "slope": 3902.6548,
+    "intercept": -7868580.7262,
+    "r2": 0.7361,
+    "years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "cases": [
+      1975,
+      7818,
+      15113,
+      23606,
+      33313,
+      28605,
+      26022,
+      28635
+    ]
+  },
+  "health_score": {
+    "patients": 100000,
+    "avg_score": 72.8,
+    "high_risk": 1718,
+    "high_risk_rate": 1.72
+  },
+  "ods_dir": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods",
+  "mysql_ads": "chronic_disease.ads_*"
+}

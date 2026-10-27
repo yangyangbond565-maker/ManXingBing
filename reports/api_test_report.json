@@ -1,0 +1,100 @@
+[
+    {
+        "endpoint":  "health",
+        "http":  200,
+        "code":  0,
+        "ms":  128,
+        "ok":  true
+    },
+    {
+        "endpoint":  "dashboard/overview",
+        "http":  200,
+        "code":  0,
+        "ms":  6,
+        "ok":  true
+    },
+    {
+        "endpoint":  "patient-profile",
+        "http":  200,
+        "code":  0,
+        "ms":  35,
+        "ok":  true
+    },
+    {
+        "endpoint":  "disease-distribution",
+        "http":  200,
+        "code":  0,
+        "ms":  299,
+        "ok":  true
+    },
+    {
+        "endpoint":  "risk-factors?factor=smoking",
+        "http":  200,
+        "code":  0,
+        "ms":  6,
+        "ok":  true
+    },
+    {
+        "endpoint":  "visits?type=type",
+        "http":  200,
+        "code":  0,
+        "ms":  1342,
+        "ok":  true
+    },
+    {
+        "endpoint":  "medications?type=top",
+        "http":  200,
+        "code":  0,
+        "ms":  1674,
+        "ok":  true
+    },
+    {
+        "endpoint":  "trend?grain=year",
+        "http":  200,
+        "code":  0,
+        "ms":  8,
+        "ok":  true
+    },
+    {
+        "endpoint":  "health-score/overview",
+        "http":  200,
+        "code":  0,
+        "ms":  1183,
+        "ok":  true
+    },
+    {
+        "endpoint":  "health-score/patients?page=1\u0026size=2",
+        "http":  200,
+        "code":  0,
+        "ms":  448,
+        "ok":  true
+    },
+    {
+        "endpoint":  "data-quality",
+        "http":  200,
+        "code":  0,
+        "ms":  5,
+        "ok":  true
+    },
+    {
+        "endpoint":  "modules",
+        "http":  200,
+        "code":  0,
+        "ms":  3,
+        "ok":  true
+    },
+    {
+        "endpoint":  "patients?page=1\u0026size=2",
+        "http":  200,
+        "code":  0,
+        "ms":  299,
+        "ok":  true
+    },
+    {
+        "endpoint":  "patients/1",
+        "http":  200,
+        "code":  0,
+        "ms":  24,
+        "ok":  true
+    }
+]

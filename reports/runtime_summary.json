@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-10-21T09:21:00+08:00",
+  "project_root": "D:/官方工作区/chronic-disease",
+  "database": {
+    "name": "chronic_disease",
+    "mysql_version": "8.0.42",
+    "patient_info": 100000,
+    "disease_record": 165087,
+    "health_checkup": 300022,
+    "lifestyle": 100000,
+    "visit_record": 550070,
+    "medication_record": 549587,
+    "follow_up": 300390,
+    "total_rows": 2065156
+  },
+  "vm": {
+    "name": "Hadoop-CentOS7",
+    "ip": "192.168.20.135",
+    "hostname": "hadoop",
+    "ssh": "key-based root login",
+    "hdfs_capacity_gb": 47.76,
+    "hdfs_remaining_gb": 42.31
+  },
+  "hdfs": {
+    "status": "PASS",
+    "test_file_sha256": "aaec11fc8b502819e91bc03e5f45117ba0e71e1b198675f6bff25ebe68381406",
+    "ods_rows": 2065156,
+    "ods_path": "/warehouse/chronic_disease/ods",
+    "ads_path": "/warehouse/chronic_disease/ads",
+    "ads_dirs": 12
+  },
+  "hive": {
+    "status": "PASS",
+    "version": "3.1.3",
+    "database": "chronic_disease_db",
+    "ods_tables": 7,
+    "ads_tables": 12,
+    "health_score_rows": 100000
+  },
+  "spark": {
+    "version": "3.3.4",
+    "mode": "local[4] on Windows",
+    "status": "SUCCESS",
+    "source": "hdfs://192.168.20.135:9000/warehouse/chronic_disease/ods",
+    "elapsed_seconds": 124.74,
+    "modules": 8,
+    "mysql_ads": 15,
+    "hdfs_ads_dirs": 12,
+    "prediction": {
+      "slope": 3902.6548,
+      "intercept": -7868580.7262,
+      "r2": 0.7361,
+      "train": "2018-2025",
+      "forecast": "2026-2029"
+    }
+  },
+  "backend": {
+    "framework": "Spring Boot 2.7.18",
+    "java_runtime": "21.0.7",
+    "java_release": 17,
+    "port": 8080,
+    "api_endpoints": 14,
+    "api_passed": 14
+  },
+  "frontend": {
+    "framework": "Vue 3.5",
+    "bundler": "Vite 6.1.0",
+    "port": 4173,
+    "pages": 11,
+    "screenshots": 11
+  },
+  "tests": {
+    "python_pytest": "6 passed",
+    "spring_junit": "3 passed",
+    "api_smoke": "14/14",
+    "quality": "7/7 PASS, 0 critical issues",
+    "hdfs_hive": "HDFS PASS; Hive ODS/ADS PASS",
+    "final_verification": "18/18 PASS",
+    "sqoop": "PASS (1000-row staging only; full seven-table import not executed)"
+  },
+  "sqoop": {
+    "status": "PASS",
+    "version": "1.4.7",
+    "install_path": "/opt/sqoop-1.4.7",
+    "connector": "mysql-connector-j-8.0.33.jar",
+    "scope": "patient_info 前 1000 行 staging",
+    "mysql_rows": 1000,
+    "hdfs_rows": 1000,
+    "hive_rows": 1000,
+    "full_seven_tables": false,
+    "evidence": "reports/sqoop_verification.json"
+  },
+  "limitations": [
+    "Sqoop not installed/executed",
+    "Prediction has only 8 annual points and no external validation",
+    "Health score is a rule model, not clinically validated",
+    "No authentication/authorization; no load test"
+  ]
+}

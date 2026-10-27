@@ -1,0 +1,160 @@
+{
+  "report_type": "data_quality",
+  "generated_at": "2026-10-20T20:29:57",
+  "statistical_caliber": "10万指 patient_info 患者人数；七表总行数单独统计，不相加冒充 10 万。",
+  "patient_count": 100000,
+  "patient_count_ok": true,
+  "total_rows_all_tables": 2065156,
+  "total_issue_count": 0,
+  "critical_issue_count": 0,
+  "status": "PASS",
+  "tables": {
+    "patient_info": {
+      "rows": 100000,
+      "issues": {
+        "null_required": {
+          "count": 0,
+          "critical": true
+        },
+        "duplicate_pk": {
+          "count": 0,
+          "critical": true
+        },
+        "duplicate_id_number": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_age": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_gender": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_phone": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_id_length": {
+          "count": 0,
+          "critical": true
+        },
+        "future_create_time": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "disease_record": {
+      "rows": 165087,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "null_required": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_severity": {
+          "count": 0,
+          "critical": true
+        },
+        "future_diagnose": {
+          "count": 0,
+          "critical": true
+        },
+        "before_create": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "health_checkup": {
+      "rows": 300022,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_values": {
+          "count": 0,
+          "critical": true
+        },
+        "future_checkup": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "lifestyle": {
+      "rows": 100000,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "duplicate_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_values": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "visit_record": {
+      "rows": 550070,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_values": {
+          "count": 0,
+          "critical": true
+        },
+        "cost_balance": {
+          "count": 0,
+          "critical": true
+        },
+        "future_visit": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "medication_record": {
+      "rows": 549587,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_dates": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_values": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    },
+    "follow_up": {
+      "rows": 300390,
+      "issues": {
+        "orphan_patient": {
+          "count": 0,
+          "critical": true
+        },
+        "invalid_values": {
+          "count": 0,
+          "critical": true
+        }
+      }
+    }
+  }
+}

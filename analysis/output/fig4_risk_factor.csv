@@ -1,0 +1,17 @@
+﻿factor_type,factor_value,patient_count
+bmi,偏瘦,18916
+bmi,正常,137901
+bmi,肥胖,35474
+bmi,超重,107731
+diet,正常,140739
+diet,清淡,84265
+diet,重口味,75018
+drinking,从不,91753
+drinking,在饮,48398
+drinking,已戒,24936
+exercise,偶尔,126215
+exercise,无,89965
+exercise,经常,83842
+smoking,从不,81057
+smoking,在吸,54130
+smoking,已戒,29900

@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+spring:
+  application:
+    name: chronic-disease-backend
+  datasource:
+    url: ${CHRONIC_DB_URL:jdbc:mysql://127.0.0.1:3306/chronic_disease?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8}
+    username: ${CHRONIC_DB_USER:root}
+    password: ${CHRONIC_DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+app:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}
+logging:
+  level:
+    root: INFO
+    cn.edu.gdut.chronic: INFO
+  file:
+    name: ../logs/backend.log
